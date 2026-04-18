@@ -47,3 +47,35 @@ variable "sg_tags" {
         Name = "allow-all"
     }
 }
+variable "ingress_ports" {
+    default = [ #list(map)
+        {
+            from_port = 22
+            to_port = 22
+        },
+        {
+            from_port = 80
+            to_port = 80
+        },
+        {
+            from_port = 8080
+            to_port = 8080
+        }
+    ]
+}
+variable "egress_ports" {
+    default = [
+        {
+            from_port = 22
+            to_port = 22
+        },
+        {
+            from_port = 80
+            to_port =80
+        },
+        {
+            from_port = 8080
+            to_port = 8080
+        }
+    ]
+}
